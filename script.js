@@ -25,7 +25,13 @@ let days = [
 { day: 182, sopBook: 'GC', sopPages: '256e-260b', sopChapter: 'Later English Reformers'}]
 
 chapters = {
-    'Luther Before the Diet': '08'
+    'Luther Before the Diet': '08',
+    'The Swiss Reformer': '09',
+    'Progress of Reform in Germany': '10',
+    'Protest of the Princes': '11',
+    'The French Reformation': '12',
+    'The Netherlands and Scandinavia': '13',
+    'Later English Reformers': '14'
 }
 let getDay = function() {
     var now = new Date();
