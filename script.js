@@ -342,3 +342,4 @@ $("body").on('click', "#getReading", function(){
       console.log(data)
     });
   });
+readingsElement.appendChild(title)
