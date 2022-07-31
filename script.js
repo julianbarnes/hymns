@@ -333,8 +333,16 @@ let title = document.createElement('a')
 title.innerText = '' + today.day + ' ' + today.sopBook + ' ' + today.sopChapter + ' ' + today.sopPages
 title.setAttribute('href', `https://www.preparingforeternity.com/${today.sopBook.toLowerCase()}/${today.sopBook.toLowerCase()}${books[today.sopBook].chapters[today.sopChapter]}.htm`)
 
-readingsElement.appendChild(title)
+let iframe = document.createElement('iframe')
+iframe.setAttribute('src',`en_${today.sopBook.toLowerCase()}.pdf`)
+iframe.setAttribute('title', 'Reading Frame')
+iframe.setAttribute('style', 'border:none; width: 100%; height: 40rem')
+window.find(today.sopPages)
 
+
+readingsElement.appendChild(title)
+readingsElement.appendChild(iframe)
+readingsElement.appendChild()
 $("body").on('click', "#getReading", function(){
     console.log('clicked')
     $.get("https://www.preparingforeternity.com/pk/pk08.htm", function(data, status){
