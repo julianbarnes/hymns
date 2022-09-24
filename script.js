@@ -47,14 +47,71 @@ let books = {
   },
   'AA': {
     chapters: {
-      "Chapter 1":""
+      "God’s Purpose for His Church":"01",
+      "The Training of the Twelve":"02",
+      "The Great Commission":"03",
+      "Pentecost":"04",
+      "The Gift of the Spirit":"05",
+      "At the Temple Gate":"06",
+      "A Warning Against Hypocrisy":"07",
+      "Before the Sanhedrin":"08",
+      "The Seven Deacons":"09",
+      "The First Christian Martyr":"10",
+      "The Gospel in Samaria":"11",
+      "From Persecutor to Disciple":"12",
+      "Days of Preparation":"13",
+      "A Seeker for Truth":"14",
+      "Delivered From Prison":"15",
+      "The Gospel Message in Antioch":"16",
+      "Heralds of the Gospel":"17",
+      "Preaching Among the Heathen":"18",
+      "Jew and Gentile":"19",
+      "Exalting the Cross":"20",
+      "In the Regions Beyond":"21",
+      "Thessalonica":"22",
+      "Berea and Athens":"23",
+      "Corinth":"24",
+      "The Thessalonian Letters":"25",
+      "Apollos at Corinth":"26",
+      "Ephesus":"27",
+      "Days of Toil and Trial":"28",
+      "A Message of Warning and Entreaty":"29",
+      "Called to Reach a Higher Standard":"30",
+      "The Message Heeded":"31",
+      "A Liberal Church":"32",
+      "Laboring Under Difficulties":"33",
+      "A Consecrated Ministry":"34",
+      "Salvation to the Jews":"35",
+      "Apostasy in Galatia":"36",
+      "Paul’s Last Journey to Jerusalem":"37",
+      "Paul a Prisoner":"38",
+      "The Trial at Caesarea":"39",
+      "Paul Appeals to Caesar":"40",
+      "“Almost Thou Persuadest Me”":"41",
+      "The Voyage and Shipwreck":"42",
+      "In Rome":"43",
+      "Caesar’s Household":"44",
+      "Written From Rome":"45",
+      "At Liberty":"46",
+      "The Final Arrest":"47",
+      "Paul Before Nero":"48",
+      "Paul’s Last Letter":"49",
+      "Condemned to Die":"50",
+      "A Faithful Under-Shepherd":"51",
+      "Steadfast Unto the End":"52",
+      "John the Beloved":"53",
+      "A Faithful Witness":"54",
+      "Transformed by Grace":"55",
+      "Patmos":"56",
+      "The Revelation":"57",
+      "The Church Triumphant":"58"
     }
   }
 }
 let days = [
-{ day: 01, sopBook: 'AA', sopPages: '145-150b', sopChapter: Object.keys(books['AA'].chapters)[0]},
-{ day: 02, sopBook: 'AA', sopPages: '145-150b', sopChapter: Object.keys(books['AA'].chapters)[0]},
-{ day: 03, sopBook: 'AA', sopPages: '145-150b', sopChapter: Object.keys(books['AA'].chapters)[0]},
+{ day: 01, sopBook: 'AA', sopPages: '9-16', sopChapter: Object.keys(books['AA'].chapters)[0]},
+{ day: 02, sopBook: 'AA', sopPages: '17-24', sopChapter: Object.keys(books['AA'].chapters)[0]},
+{ day: 03, sopBook: 'AA', sopPages: '25-34', sopChapter: Object.keys(books['AA'].chapters)[0]},
 { day: 04, sopBook: 'AA', sopPages: '145-150b', sopChapter: Object.keys(books['AA'].chapters)[0]},
 { day: 05, sopBook: 'AA', sopPages: '145-150b', sopChapter: Object.keys(books['AA'].chapters)[0]},
 { day: 06, sopBook: 'AA', sopPages: '145-150b', sopChapter: Object.keys(books['AA'].chapters)[0]},
@@ -333,11 +390,11 @@ let title = document.createElement('a')
 title.innerText = '' + today.day + ' ' + today.sopBook + ' ' + today.sopChapter + ' ' + today.sopPages
 title.setAttribute('href', `https://www.preparingforeternity.com/${today.sopBook.toLowerCase()}/${today.sopBook.toLowerCase()}${books[today.sopBook].chapters[today.sopChapter]}.htm`)
 
-let iframe = document.createElement('iframe')
-iframe.setAttribute('src',`en_${today.sopBook.toLowerCase()}.pdf`)
-iframe.setAttribute('title', 'Reading Frame')
-iframe.setAttribute('style', 'border:none; width: 100%; height: 40rem')
-window.find(today.sopPages)
+// let iframe = document.createElement('iframe')
+// iframe.setAttribute('src',`https://www.preparingforeternity.com/${today.sopBook.toLowerCase()}/${today.sopBook.toLowerCase()}${books[today.sopBook].chapters[today.sopChapter]}.htm`)
+// iframe.setAttribute('title', 'Reading Frame')
+// iframe.setAttribute('style', 'border:none; width: 100%; height: 40rem')
+// window.find(today.sopPages)
 
 
 readingsElement.appendChild(title)
