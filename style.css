@@ -17,6 +17,7 @@ body {
     box-shadow: 2px 2px 7px 2px grey;
     display: flex;
     flex-direction: row-reverse;
+    border-radius: 2px;
 }
 
 .song-item img {
@@ -26,4 +27,23 @@ body {
 .song-item a {
     font-size: 100%;
     height: 100%;
+}
+
+#blood {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    z-index: 1;
+    width:100%;
+    height:30%;
+    opacity: 50%;
+    overflow: hidden;
+}
+
+#blood img {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
 }

@@ -387,8 +387,13 @@ console.log(getDay())
 let readingsElement = document.body.querySelector('#readings')
 
 let title = document.createElement('a')
-title.innerText = '' + today.day + ' ' + today.sopBook + ' ' + today.sopChapter + ' ' + today.sopPages
-title.setAttribute('href', `https://www.preparingforeternity.com/${today.sopBook.toLowerCase()}/${today.sopBook.toLowerCase()}${books[today.sopBook].chapters[today.sopChapter]}.htm`)
+if (today) {
+  title.innerText = '' + today.day + ' ' + today.sopBook + ' ' + today.sopChapter + ' ' + today.sopPages
+  title.setAttribute('href', `https://www.preparingforeternity.com/${today.sopBook.toLowerCase()}/${today.sopBook.toLowerCase()}${books[today.sopBook].chapters[today.sopChapter]}.htm`)
+} else {
+  title.innerText = "Today is day: " + getDay();
+}
+
 
 // let iframe = document.createElement('iframe')
 // iframe.setAttribute('src',`https://www.preparingforeternity.com/${today.sopBook.toLowerCase()}/${today.sopBook.toLowerCase()}${books[today.sopBook].chapters[today.sopChapter]}.htm`)
@@ -408,3 +413,10 @@ $("body").on('click', "#getReading", function(){
     });
   });
 readingsElement.appendChild(title)
+
+let songItem = document.querySelector('.song-item img')
+console.log(songItem)
+
+songItem.addEventListener('click', (e) => {
+  console.log(e)
+})
