@@ -404,7 +404,7 @@ if (today) {
   title.innerText = '' + today.day + ' ' + today.sopBook + ' ' + today.sopChapter + ' ' + today.sopPages
   title.setAttribute('href', `https://www.preparingforeternity.com/${today.sopBook.toLowerCase()}/${today.sopBook.toLowerCase()}${books[today.sopBook].chapters[today.sopChapter]}.htm`)
 } else {
-  title.innerText = "Today is day: " + getWeekDay() + "\n Today is week: " + getWeek();
+  title.innerText = "Today is day: " + getWeekDay() + "\n Today is week: " + getWeek() + "\n Discipleship Handbook Lesson: " + ((getWeek() % 27) + 1);
 }
 
 
