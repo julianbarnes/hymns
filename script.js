@@ -380,6 +380,19 @@ let getDay = function() {
     console.log('Day of year: ' + day);
     return day;
 }
+
+let getWeek = function() {
+  return Math.floor(getDay() / 7);
+}
+
+let getWeekDay = function() {
+  var now = new Date();
+  if(now.getDay() === 0 || now.getDay() === 6) {
+    return now.getDay() === 0 ? "Sunday" : "Saturday";
+  }
+  return getWeek() * 5 + (now.getDay() - 1); 
+}
+
 let today = days.find((day) => day.day === getDay())
 
 
@@ -391,7 +404,7 @@ if (today) {
   title.innerText = '' + today.day + ' ' + today.sopBook + ' ' + today.sopChapter + ' ' + today.sopPages
   title.setAttribute('href', `https://www.preparingforeternity.com/${today.sopBook.toLowerCase()}/${today.sopBook.toLowerCase()}${books[today.sopBook].chapters[today.sopChapter]}.htm`)
 } else {
-  title.innerText = "Today is day: " + getDay();
+  title.innerText = "Today is day: " + getWeekDay() + "\n Today is week: " + getWeek();
 }
 
 
