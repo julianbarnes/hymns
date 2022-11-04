@@ -381,6 +381,14 @@ let getDay = function() {
     return day;
 }
 
+let getYear = function() {
+  return (new Date()).getFullYear();
+  //2022 day
+  //2023 day + 365
+  //2023 2nd half day + 365 - 475
+  //2024 day + 365 - 475 + 365 
+}
+
 let getWeek = function() {
   return Math.floor(getDay() / 7);
 }
@@ -391,6 +399,15 @@ let getWeekDay = function() {
     return now.getDay() === 0 ? "Sunday" : "Saturday";
   }
   return getWeek() * 5 + (now.getDay() - 1); 
+}
+
+let getDayOfTheMonth = function() {
+  var now = new Date();
+  if(now.getDay() === 0 || now.getDay() === 6) {
+    return now.getDay() === 0 ? "Sunday" : "Saturday";
+  }
+  return getWeek() % 5 + (now.getDay() - 1);  
+
 }
 
 let today = days.find((day) => day.day === getDay())
@@ -404,7 +421,13 @@ if (today) {
   title.innerText = '' + today.day + ' ' + today.sopBook + ' ' + today.sopChapter + ' ' + today.sopPages
   title.setAttribute('href', `https://www.preparingforeternity.com/${today.sopBook.toLowerCase()}/${today.sopBook.toLowerCase()}${books[today.sopBook].chapters[today.sopChapter]}.htm`)
 } else {
-  title.innerText = "Today is day: " + getWeekDay() + "\n Today is week: " + getWeek() + "\n Discipleship Handbook Lesson: " + ((getWeek() % 27) + 1);
+  title.innerText = "Today is day: " + getWeekDay() +
+  "\n Today is week: " + getWeek() +
+  "\n Discipleship Handbook Lesson: " + ((getWeek() % 27)) +
+  "\n Amazing Disciples Lesson: " + ((getWeek() % 14)) +
+  "\n Compelling Love of God Lesson: " + ((getWeek() % 18)) +
+  "\n Spirit of Prophecy Reading Plan: " + ((getDay() + (getYear() % 2 > 1 ? + 365 : 0)) % 475) +
+  "\n Get Day of the Month: " + getDayOfTheMonth();
 }
 
 
