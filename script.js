@@ -392,28 +392,68 @@ let getYear = function() {
 let getWeek = function() {
   return Math.floor(getDay() / 7);
 }
+function getWeekOfMonth(date) {
+  const startWeekDayIndex = 1; // 1 MonthDay 0 Sundays
+  const firstDate = new Date(date.getFullYear(), date.getMonth(), 1);
+  const firstDay = firstDate.getDay();
 
-let getWeekDay = function() {
-  var now = new Date();
-  if(now.getDay() === 0 || now.getDay() === 6) {
-    return now.getDay() === 0 ? "Sunday" : "Saturday";
+  let weekNumber = Math.ceil((date.getDate() + firstDay) / 7);
+  if (startWeekDayIndex === 1) {
+    if (date.getDay() === 0 && date.getDate() > 1) {
+      weekNumber -= 1;
+    }
+
+    if (firstDate.getDate() === 1 && firstDay === 0 && date.getDate() > 1) {
+      weekNumber += 1;
+    }
   }
-  return getWeek() * 5 + (now.getDay() - 1); 
+  return weekNumber;
 }
 
-let getDayOfTheMonth = function() {
+let getWeekDayOfTheMonth = function() {
   var now = new Date();
   if(now.getDay() === 0 || now.getDay() === 6) {
     return now.getDay() === 0 ? "Sunday" : "Saturday";
   }
-  return getWeek() % 5 + (now.getDay() - 1);  
+  return (getWeekOfMonth(now) - 1) * 5 + (now.getDay()); 
+}
 
+let getWeekDayOfTheYear = function() {
+  var now = new Date();
+  if(now.getDay() === 0 || now.getDay() === 6) {
+    return now.getDay() === 0 ? "Sunday" : "Saturday";
+  }
+  return getWeek() * 5 + (now.getDay() - 1);  
+
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }
 
 let today = days.find((day) => day.day === getDay())
 
+//set reading plan day in cookies 
+
 
 console.log(getDay())
+if (getCookie("day")) {
+  document.cookie = `day=${parseInt(getCookie("day")) + 1}`
+} else {
+  document.cookie = `day=${getDay()}`;
+}
 let readingsElement = document.body.querySelector('#readings')
 
 let title = document.createElement('a')
@@ -421,13 +461,13 @@ if (today) {
   title.innerText = '' + today.day + ' ' + today.sopBook + ' ' + today.sopChapter + ' ' + today.sopPages
   title.setAttribute('href', `https://www.preparingforeternity.com/${today.sopBook.toLowerCase()}/${today.sopBook.toLowerCase()}${books[today.sopBook].chapters[today.sopChapter]}.htm`)
 } else {
-  title.innerText = "Today is day: " + getWeekDay() +
-  "\n Today is week: " + getWeek() +
-  "\n Discipleship Handbook Lesson: " + ((getWeek() % 27)) +
-  "\n Amazing Disciples Lesson: " + ((getWeek() % 14)) +
-  "\n Compelling Love of God Lesson: " + ((getWeek() % 18)) +
-  "\n Spirit of Prophecy Reading Plan: " + ((getDay() + (getYear() % 2 > 1 ? + 365 : 0)) % 475) +
-  "\n Get Day of the Month: " + getDayOfTheMonth();
+  title.innerHTML = "<h2>Defense</h2> \n <p>Discipleship Handbook Reading Plan: " + getWeekDayOfTheYear() +
+  // "</p><p> This is week: " + getWeek() +
+  "</p><p> Compelling Love of God Lesson: " + ((getWeek() % 18)) +
+  "</p><p> Amazing Facts Reading Plan: " + getWeekDayOfTheMonth() +
+  "</p><h2>Offense</h2> <p>Discipleship Handbook Lesson: " + ((getWeek() % 27)) +
+  "</p><p> Amazing Disciples Lesson: " + ((getWeek() % 14)) +
+  "</p><p> Spirit of Prophecy Reading Plan: " + (getCookie("day") ? getCookie("day"): ((getDay() + (getYear() % 2 > 1 ? + 365 : 0)) % 475)) + "</p>"
 }
 
 
@@ -442,12 +482,12 @@ readingsElement.appendChild(title)
 readingsElement.appendChild(iframe)
 readingsElement.appendChild()
 $("body").on('click', "#getReading", function(){
-    console.log('clicked')
-    $.get("https://www.preparingforeternity.com/pk/pk08.htm", function(data, status){
-      alert("Data: " + data + "\nStatus: " + status);
-      console.log(data)
-    });
+  console.log('clicked')
+  $.get("https://www.preparingforeternity.com/pk/pk08.htm", function(data, status){
+    alert("Data: " + data + "\nStatus: " + status);
+    console.log(data)
   });
+});
 readingsElement.appendChild(title)
 
 let songItem = document.querySelector('.song-item img')
