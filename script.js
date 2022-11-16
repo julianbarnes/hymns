@@ -461,13 +461,14 @@ if (today) {
   title.innerText = '' + today.day + ' ' + today.sopBook + ' ' + today.sopChapter + ' ' + today.sopPages
   title.setAttribute('href', `https://www.preparingforeternity.com/${today.sopBook.toLowerCase()}/${today.sopBook.toLowerCase()}${books[today.sopBook].chapters[today.sopChapter]}.htm`)
 } else {
-  title.innerHTML = "<h2>Defense</h2> \n <p>Discipleship Handbook Reading Plan: " + getWeekDayOfTheYear() +
+  title.innerHTML = "<h2>Defense</h2> \n <p><a target='_blank' href='https://read.amazon.com/?asin=B0735RFSYW&ref_=kwl_kr_iv_rec_1&language=en-US'>Discipleship Handbook Reading Plan: " + getWeekDayOfTheYear() +
   // "</p><p> This is week: " + getWeek() +
-  "</p><p> Compelling Love of God Lesson: " + ((getWeek() % 18)) +
-  "</p><p> Amazing Facts Reading Plan: " + getWeekDayOfTheMonth() +
-  "</p><h2>Offense</h2> <p>Discipleship Handbook Lesson: " + ((getWeek() % 27)) +
-  "</p><p> Amazing Disciples Lesson: " + ((getWeek() % 14)) +
-  "</p><p> Spirit of Prophecy Reading Plan: " + (getCookie("day") ? getCookie("day"): ((getDay() + (getYear() % 2 > 1 ? + 365 : 0)) % 475)) + "</p>"
+  "</a></p><p><a target='_blank'  href='https://www.compellinglove.org/compelling-love-bible-study-lessons'>Compelling Love of God Lesson: " + ((getWeek() % 18)) +
+  "</a></p><p> <a target='_blank' href='https://www.amazingfacts.org/bible-study/bible-reading-plan'>Amazing Facts Reading Plan: " + getWeekDayOfTheMonth() +
+  "</a></p><h2>Offense</h2> <p><a target='_blank' href='https://read.amazon.com/?asin=B0735RFSYW&ref_=kwl_kr_iv_rec_1&language=en-US'>Discipleship Handbook Lesson: " + ((getWeek() % 27)) +
+  "</a></p><p><a target='_blank' href='https://read.amazon.com/?asin=B082BDRZ7J&ref_=kwl_kr_iv_rec_4&language=en-US'>Amazing Disciples Lesson: " + ((getWeek() % 14)) +
+  "</a></p><p> <a target='_blank' href='https://cdn.ministerialassociation.org/docs/2017-NewResources/878%20-%20Revival%20Plan%20-%20Testimonies%20Reading%20Plan.pdf'>Spirit of Prophecy Reading Plan: " + (getCookie("day") ? getCookie("day"): ((getDay() + (getYear() % 2 > 1 ? + 365 : 0)) % 475)) + "</a></p>" +
+  "<p><a href='elder_handbook.html'>Elder's Handbook</a></p>"
 }
 
 
