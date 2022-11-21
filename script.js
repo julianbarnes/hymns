@@ -467,7 +467,7 @@ if (today) {
   "</a></p><p> <a target='_blank' href='https://www.amazingfacts.org/bible-study/bible-reading-plan'>Amazing Facts Reading Plan: " + getWeekDayOfTheMonth() +
   "</a></p><h2>Offense</h2> <p><a target='_blank' href='https://read.amazon.com/?asin=B0735RFSYW&ref_=kwl_kr_iv_rec_1&language=en-US'>Discipleship Handbook Lesson: " + ((getWeek() % 27)) +
   "</a></p><p><a target='_blank' href='https://read.amazon.com/?asin=B082BDRZ7J&ref_=kwl_kr_iv_rec_4&language=en-US'>Amazing Disciples Lesson: " + ((getWeek() % 14)) +
-  "</a></p><p> <a target='_blank' href='https://www.youtube.com/@AdventbandMinistry/playlists'>Spirit of Prophecy Reading Plan: " + (getCookie("day") ? getCookie("day"): ((getDay() + (getYear() % 2 > 1 ? + 365 : 0)) % 475)) + "</a></p>" +
+  "</a></p><p> <a target='_blank' href='https://www.youtube.com/playlist?list=PL1ZRB3gsOiOPg6xSGYc7pd-_sOAKeZSzt'>Spirit of Prophecy Reading Plan: " + (getCookie("day") ? getCookie("day"): ((getDay() + (getYear() % 2 > 1 ? + 365 : 0)) % 475)) + "</a></p>" +
   "<p><a href='elder_handbook.html'>Elder's Handbook</a></p>"
 }
 
