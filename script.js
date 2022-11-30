@@ -461,14 +461,16 @@ if (today) {
   title.innerText = '' + today.day + ' ' + today.sopBook + ' ' + today.sopChapter + ' ' + today.sopPages
   title.setAttribute('href', `https://www.preparingforeternity.com/${today.sopBook.toLowerCase()}/${today.sopBook.toLowerCase()}${books[today.sopBook].chapters[today.sopChapter]}.htm`)
 } else {
-  title.innerHTML = "<h2>Defense</h2> \n <p><a target='_blank' href='https://read.amazon.com/?asin=B0735RFSYW&ref_=kwl_kr_iv_rec_1&language=en-US'>Discipleship Handbook Reading Plan: " + getWeekDayOfTheYear() +
+  title.innerHTML = "<h2>What</h2> \n <p><a target='_blank' href='https://read.amazon.com/?asin=B0735RFSYW&ref_=kwl_kr_iv_rec_1&language=en-US'>Discipleship Handbook Reading Plan: " + getWeekDayOfTheYear() +
   // "</p><p> This is week: " + getWeek() +
   "</a></p><p><a target='_blank'  href='https://www.compellinglove.org/compelling-love-bible-study-lessons'>Compelling Love of God Lesson: " + ((getWeek() % 18)) +
   "</a></p><p> <a target='_blank' href='https://www.amazingfacts.org/bible-study/bible-reading-plan'>Amazing Facts Reading Plan: " + getWeekDayOfTheMonth() +
-  "</a></p><h2>Offense</h2> <p><a target='_blank' href='https://read.amazon.com/?asin=B0735RFSYW&ref_=kwl_kr_iv_rec_1&language=en-US'>Discipleship Handbook Lesson: " + ((getWeek() % 27)) +
+  "<p><a target='_blank' href='https://learn.arise.online/library/arise-online-groups-38145/94810/path/'>Arise Course</a></p>"+
+  "</a></p><h2>How</h2> <p><a target='_blank' href='https://read.amazon.com/?asin=B0735RFSYW&ref_=kwl_kr_iv_rec_1&language=en-US'>Discipleship Handbook Lesson: " + ((getWeek() % 27)) +
   "</a></p><p><a target='_blank' href='https://read.amazon.com/?asin=B082BDRZ7J&ref_=kwl_kr_iv_rec_4&language=en-US'>Amazing Disciples Lesson: " + ((getWeek() % 14)) +
   "</a></p><p> <a target='_blank' href='https://www.youtube.com/playlist?list=PL1ZRB3gsOiOPg6xSGYc7pd-_sOAKeZSzt'>Spirit of Prophecy Reading Plan: " + (getCookie("day") ? getCookie("day"): ((getDay() + (getYear() % 2 > 1 ? + 365 : 0)) % 475)) + "</a></p>" +
-  "<p><a href='elder_handbook.html'>Elder's Handbook</a></p>"
+  "<p><a href='elder_handbook.html'>Elder's Handbook</a></p>" +
+  "<p><a target='_blank' href='https://learn.arise.online/library/the-telling-40501/106215/path/?path_id=4393831'>Arise the Telling</a></p>"
 }
 
 
