@@ -472,7 +472,7 @@ if (today) {
   
   + "<p><a target='_blank' href='https://read.amazon.com/?asin=B0735RFSYW&ref_=kwl_kr_iv_rec_1&language=en-US'>Discipleship Handbook Lesson: " + ((getWeek() % 27)) +
   "</a></p><p><a target='_blank' href='https://read.amazon.com/?asin=B082BDRZ7J&ref_=kwl_kr_iv_rec_4&language=en-US'>Amazing Disciples Lesson: " + ((getWeek() % 14)) +
-  "</a></p><p> <a target='_blank' href='https://www.youtube.com/playlist?list=PL1ZRB3gsOiOPg6xSGYc7pd-_sOAKeZSzt'>Spirit of Prophecy Reading Plan: " + (getCookie("day") ? getCookie("day"): ((getDay() + (getYear() % 2 > 1 ? + 365 : 0)) % 475)) + "</a></p>" +
+  "</a></p><p> <a target='_blank' href='https://youtube.com/playlist?list=PL1ZRB3gsOiOOJN79X6HVBZtW5oxih6Mja'>Spirit of Prophecy Reading Plan: " + (getCookie("day") ? getCookie("day"): ((getDay() + (getYear() % 2 > 1 ? + 365 : 0)) % 475)) + "</a></p>" +
   "<p><a target='_blank' href='elder_handbook.html'>Elder's Handbook</a></p>" +
   "<p><a target='_blank' href='https://learn.arise.online/library/the-telling-40501/106215/path/?path_id=4393831'>Arise the Telling</a></p>" + 
   "<p><a target='_blank' href='https://www.ellenwhite.info/books/ellen-g-white-book-desire-of-ages-da-07.htm'>Jesus' Temporal Life</a></p>"
