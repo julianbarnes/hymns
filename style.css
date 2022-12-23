@@ -4,9 +4,10 @@ body {
     align-items: center;
     gap: 5rem;
     box-shadow: inset 10px 10px 30px green,
-     inset 20px 20px 40px red,
-     inset 100px 60px 50px gold
-     ;
+        inset 20px 20px 40px red,
+        inset 100px 60px 50px gold
+    ;
+    height: 100vh;
 }
 
 .song-item {
